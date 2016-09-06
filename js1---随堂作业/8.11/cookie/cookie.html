@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+window.onload=function(){
+    var oForm=document.getElementById("form");
+    var oTxt=document.getElementById("txt");
+    var oBtn=document.getElementById("btn");
+    var oClear=document.getElementById("clear");
+oForm.onsubmit=function(){
+    setCookie('username',oTxt.value,10);
+}
+   oTxt.value=getCookie('username');
+    oClear.onclick=function(){
+        removeCookie('username');
+
+    }
+}
+</script>
+<form id="form">
+<input type="text" value="" id="txt">
+<input type="submit" value="提交登录" id="btn">
+    <input type="submit" value="清楚登录" id="clear">
+</form>
+</body>
+</html>

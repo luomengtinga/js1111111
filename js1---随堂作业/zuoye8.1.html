@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<!--<div id="box"></div>
+<input type="text" value="" id="txt">
+<input type="button" value="添加" id="btn">-->
+<div id="box1"></div>
+<input type="text" value="" id="txt1">
+<input type="button" value="输入" id="btn1">
+<script>
+//1.冒泡排序----------------------------------------
+/*		var arr=[40,9,8,15,11,18,12];
+		var leng=arr.length;//声明字符串的长度
+			for(var i=0;i<leng;i++){//最大下标等于长度减一
+				for(var j=1;j<leng-i;j++){
+					if(arr[j-1]>arr[j]){
+						var temp=arr[j]
+						arr[j]=arr[j-1]
+						arr[j-1]=temp;
+					}
+				}
+			}document.write(arr);*/
+//2,随机生成一个五位以内的数，然后输出该数共有多少位，每位分别是什么
+/*       var num=String(parseInt(Math.random()*100000));
+	   var str=num.split("");
+	   document.write(str.length+"");
+       document.write(num);*/
+//3.?山上有一口缸可以装50升水，现在有15升水。老和尚叫小和尚下山挑水，每次可以挑5升。问：小和尚要挑几次水才可以把水缸挑满？通过编程解决这个问题。
+
+/*	          var a=50;
+			  var b=15;
+	          var c=5;
+			  for(var i=0;i<=a/c;i++){
+				  if(i*c+b-a>=0){
+					  
+					  break;
+					  }
+				  
+				  }document.write(i);*/
+				  
+//4.有一个从小到大排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。
+  
+/*  
+  var oTxt=document.getElementById("txt"); //获取文本框
+  //console.log(oTxt);
+  var oBtn=document.getElementById("btn"); 
+  //console.log(oBtn);
+  var oBox=document.getElementById("box");
+  var arr=[1,2,3,4,5];
+ 
+  
+  function sum(){
+	for(var i=1;i<arr.length;i++){
+		for(var j=0;j<arr.length-i;j++){
+			if(arr[j]>arr[j+1]){
+				var temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+			}
+		}
+
+		}
+  
+  
+  oBox.innerHTML=arr;
+  }
+   sum();
+ 
+   oBtn.onclick=function js(){
+	arr.push(Number(oTxt.value))
+	sum()	
+	oTxt.value=" ";
+}*/
+ //5.开发一个标题为“FlipFlop”的游戏应用程序。它从1计数到100，遇到3的倍数就替换为单词“Flip”，5的倍数就替换为单词“Flop”，既为3的倍数又为5的倍数则替换为单词“FlipFlop”。
+/*  var arr=[];
+  for(var i=1;i<=100;i++){
+	  if(i%3==0&&i%5==0){
+		  arr.push("FlipFlop");
+		  }else if(i%5==0){
+			  arr.push("Flop");
+			  }else if(i%3==0){
+				  arr.push("Flip");
+				  }else{
+					  arr.push(i);
+					  }
+	  }
+      document.write(arr);*/
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ //7.找出所有1-100之间7的倍数和包含7的数字  用数组输出结果
+/*   var arr=[];
+   for(var i=1;i<=100;i++){
+	   if(i%7==0){
+		   arr.push(i);
+		   }else if(i>69&&i<80){
+			   arr.push(i);
+			   }else if(i==7||i==17||i==27||i==37||i==47||i==57||i==67||i==77||i==87||i==97){
+				  arr.push(i);
+				  }
+	   
+	   }document.write(arr);*/
+ 
+ 
+ 
+ 
+  
+</script>
+
+</body>
+</html>

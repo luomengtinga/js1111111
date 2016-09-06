@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+<!--#box{width:380px;height:300px;border:1px solid #99F;}-->
+
+#box{width:400px;height:200px;border:solid 1px red;margin:100px auto;}
+#huafei{background:green;color:blue;}
+#cont{font-size:30px;text-align:center;line-height:130px;font-weight:900;color:yellow;}
+span{width:98px;height:60px;border:solid 1px gray;text-align:center;line-height:50px;float:left;display:block;font-size:14px;}
+</style>
+</head>
+
+<body>
+<!--<div id="box"></div>
+<input type="text" id="txt" value="">
+<input type="button" id="but" value="按钮">-->
+
+<div id="box">
+<span id="huafei">充话费</span>
+<span>充流量</span>
+<span>充宽带</span>
+<span>充固话</span>
+<div id="cont">充话费</div>
+</div>
+<script>
+ 
+/*window.onload=function(){
+ var oBox=document.getElementById("box");
+ //console.log(oBox);
+ var oTxt=document.getElementById("txt");
+ //console.log(oTxt);
+ var oBut=document.getElementById("but");
+ //console.log(oBut);
+oBut.onclick=function(){
+	values=oTxt.value;
+	arr=values.split("");	
+	for(i=0;i<arr.length;i++){
+		if(i%4==0){
+			oBox.innerHTML+="<span style='background:yellow;'>"+arr[i]+"</span>"
+		}else if(i%4==1){
+			oBox.innerHTML+="<span style='background:green;'>"+arr[i]+"</span>"
+			}else if(i%4==2){
+			oBox.innerHTML+="<span style='background:pink;'>"+arr[i]+"</span>"
+			}else{
+			oBox.innerHTML+="<span style='background:gray;'>"+arr[i]+"</span>"
+			}	
+	}
+}
+}*/
+
+window.onload=function(){
+	
+var arr=["充话费","充流量","充固话","充宽带"]	
+var spans=document.getElementsByTagName("span");
+var conts=document.getElementById("cont");
+for(m=0;m<spans.length;m++){
+	spans[m].index=m;
+	spans[m].onclick=function(){
+		for(n=0;n<spans.length;n++){
+			spans[n].id="";	
+		}		
+		this.id="huafei";
+		cont.innerHTML=arr[this.index];
+	}	
+}
+}
+
+</script>
+</body>
+</html>

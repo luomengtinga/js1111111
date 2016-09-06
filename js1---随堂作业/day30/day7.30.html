@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+#header{margin:20px auto;width:500px;border-bottom:1px solid #999;text-align:center;}
+#healthy{border-collapse:collapse;margin:20px auto;}
+#healthy td{border:1px solid green;width:30%;height:38px;text-align:center;}
+#btn{margin:0 auto;text-align:center;}
+#healthy .td1{width:70%;background:#FFF;}
+</style>
+</head>
+
+<body>
+
+<div id=header><img src="img/img.png"/></div>
+<table id="healthy">
+
+<tr>
+<td>体重:</td>
+<td class="td1"><input type="text" value="" id=tz/></td>
+</tr>
+<tr>
+<td>身高:</td>
+<td class="td1"><input type="text" value="" id=sg/></td>
+</tr>
+<tr>
+<td colspan="2" ><img src="img/btn.png" id="btn"/></td>
+</tr>
+<tr>
+<td>健康值:</td>
+<td  class="td1" id="text1"></td>
+</tr>
+<td>系统评:价</td>
+<td class="td1" id="text2"></td>
+</tr>
+</table>
+<script>
+    function text(){                                                                                                                                                                        
+    var oTz=document.getElementById("tz");
+    var oSg=document.getElementById("sg");
+	var oText1=document.getElementById("text1");
+    var oText2=document.getElementById("text2");
+	var t=Number(oTz.value);
+	var s=Number(oSg.value);
+	var bz=(t-108)*2
+	if(t>bz-10){
+		oText1.innerHTML="你太瘦了"
+		oText2.innerHTML="需要增肥啊"
+		}else if(t>bz+10){
+			oText1.innerHTML="你太胖了"
+		    oText2.innerHTML="你完蛋了"
+			}else{
+				oText1.innerHTML="标准身材啊"
+		        oText2.innerHTML="完美"
+			}
+		    }
+				var oBtn=document.getElementById("btn");
+				oBtn.onclick=function(){
+					text();
+					}
+/*function isprime(x){
+	var count=0;
+	for(var i=1;i<=x;i++){
+		if(x%i==0){
+			count++;
+			}
+		}
+		if(count==2){
+			alert(x+"是质数");
+			}else{
+				alert(x+"不是质数");
+				}
+	}isprime(15);*/
+       
+	  /* var num=[1,2,3,4,5,6,7,8];
+	   alert(num.length);*/
+
+ /*     var arr=["你好","哈喽","不喜欢",1,2,3,5];
+	    for(var i=0;i<=arr.length;i++){
+		  
+		  }alert(arr);*/
+		
+	/*	 function sum(min,max){
+			  return parseInt(Math.random()*(max-min+1))+min;
+			 }alert(sum(5,9));*/
+/*		  window.onload=function(){
+			  var oBtn=document.getElementById("btn");
+			  var oDiv=document.getElementById("box");
+			 
+			  oBtn.onclick=function(){
+				   var arr=[0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n];
+			  var codeStr="";
+				  for(var i=0;i<4;i++){
+					  var index=parseInt(Math.random()*arr.length);
+					  codeStr+=arr[index];
+					  }
+				  oDiv.innerHTML=codeStr;
+				  }
+			  }*/
+			  
+/*			  function sum(){
+				  var arg=arguments;
+				  var sum=0;
+				  for(var i=0;i<arg.length;i++){
+					  sum+=arg[i];
+					  }
+					  return sum;
+				  }
+				  alert(sum(2,3,2,3,5,6,7,8,8,9));*/
+             
+</script>
+</body>
+</html>

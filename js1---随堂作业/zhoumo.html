@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+#box{width:360px;height::100%;border:10px solid #9CF;margin:auto;position:relative;}
+#wz{background:#9C6;display:block;}
+#dj{background:#9C6;display:block;color:red;position:absolute;right:0;bottom:3px;}
+</style>
+</head>
+
+<body>
+<div id="box"><p id="wz"></p><a href="#" id="dj">&lt;&lt;收缩</a></div>
+<script>
+var str="儿童请问支付而无法而无法换一台色粉的儿童请问支付而无法而无法阿萨与会欧朋......一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋换一台色粉的儿童儿童请问支付而无法而无法换一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋换一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋换一台色粉的儿童儿童请问支付而无法而无法换一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋换一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋换一台色粉的儿童儿童请问支付而无法而无法换一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋换一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋换一台色粉的儿童儿童请问支付而无法而无法换一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋换一台色粉的儿童请问支付而无法而无法阿萨德成功与会欧朋......"
+window.onload=function(){
+	var oBox=document.getElementById("box");
+	//console.log(oBox);
+	var oWz=document.getElementById("wz");
+	//console.log(oWz);
+	oWz.innerHTML=str;
+	arr=str.split("");
+	//console.log(arr);
+	zfc=arr.join("");
+	//alert(zfc);
+	var A=document.getElementById("dj");
+	console.log(A);
+	A.onclick=function(){
+		if(zfc.length>40){
+		 xx=zfc;
+		 zfc=zfc.substr(0,40);
+		 oWz.innerHTML=zfc;
+		 A.innerHTML="&lt;&lt;展开"
+		}else{
+			 zfc=xx;
+			 oWz.innerHTML=zfc;
+		     A.innerHTML="&lt;&lt;收缩"
+			}
+		 }
+	
+	}
+
+
+
+
+</script>
+
+
+</body>
+</html>

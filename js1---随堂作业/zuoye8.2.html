@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<input type="text" value="" id="txt"><br><br>
+<input type="text" value="" id="txt1"><br><br>
+<input type="password" value="" placeholder="输入您的密码" id="paw1"><br><br>
+<input type="password" value="" placeholder="再次输入您的密码" id="paw2"><br><br>
+<input type="button" value="提交" id="btn">
+
+<script>
+//1.任意给定的一串字母，统计字符串里面的大写字母和小写字母的个数（6K）
+/*   var str="abcABDFghjiBNMLI";
+   var big=0;
+   var small=0;
+   for(var i=0;i<str.length;i++){
+	   var num=str.charCodeAt(i);
+	   if(num>=97&&num<=122){
+		   small++;
+		   }else if(num>=65&&num<=90){
+			   big++;
+			   }
+	   
+	   }document.write("大写字母:"+big+"                 小写字母："+small);*/
+
+/*2.注册页面的简单数据校验，（14K）(1)名字只能包含数字、字母和下划线，数字不可以开头，长度不低于6，不高于20
+(2)密码必须一致(3)输入框中要有默认提示( onfocus / onblur )(4)昵称一栏要将敏感词过滤，在提交表单时自动替换非法字符，并弹出警告信息(5)所有输入框不能为空，并数据合法，点击提交才可以正确提交表单数据*/
+
+    var oTxt=document.getElementById("txt");
+	//console.log(oTxt);
+	var oPaw1=document.getElementById("paw1");
+	//console.log(oPaw1);
+	var oPaw2=document.getElementById("paw2");
+    //console.log(oPaw2);
+    var oBtn=document.getElementById("btn");
+    //console.log(oBtn);
+	var oTxt1=document.getElementById("txt1");
+	//console.log(oTxt1);
+	oBtn.onclick=function(){
+		var sum=oTxt.value;
+		if(sum.length<6||sum.length>20){
+			alert("长度为6~20");
+		}
+		var f=sum[0].charCodeAt();
+		if((f>=65&&f<=90)||(f>=97&&f<=122)){
+			
+		}else{
+			alert("首字母不合法");
+		}
+		for(var i=0;i<sum.length;i++){
+			var s=sum[i].charCodeAt();
+			if((s>=65&&s<=90)||(s>=97&&s<=122)||(s>=48&&s<=57)||s==95){
+				
+			}else{
+				alert("您输入的不合法，可以输入一个字母数字下划线的组合，必须以字母开头");
+				break;
+			}
+		}
+		var mingan="你妹,你大爷,fuck";
+		mingan=mingan.split(",");
+		var nicheng=oTxt1.value;
+		for(var i=0;i<mingan.length;i++){
+			var reg=new RegExp(mingan[i],'gi');  
+			nicheng=nicheng.replace(reg,"**");
+			oTxt1.value=nicheng;
+			if(nicheng=="**"){
+				alert("敏感词汇");
+				break;
+				}
+		}
+		var mima=oPaw1.value;
+		var mima1=oPaw2.value;
+		if(mima==mima1){
+			
+			}else{
+				alert("您输入的密码不一样")
+				}
+		
+		
+	}
+
+
+
+//3.把昨天的冒泡封装成函数
+
+/*    function mp(){
+		var arr=[8,5,6,9,1,4];
+		var leng=arr.length;
+		for(var i=1;i<=leng-1;i++){
+		    for(var j=0;j<leng-i;j++){
+			    if(arr[j]>arr[j+1]){
+				var temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;	
+			}	
+		}
+		
+		}
+	document.write(arr);	
+	}mp();
+	*/
+	
+	
+</script>
+</body>
+</html>

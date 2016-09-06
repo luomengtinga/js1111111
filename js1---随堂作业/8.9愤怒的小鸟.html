@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#bird{position:absolute;width:100px;top:0;left:10px;}
+.d-right{transform:rotateY(180deg);}
+</style>
+</head>
+
+<body>
+<img src="bird.jpg" id="bird" style="left:10px;top:10px;">
+</body>
+<script>
+   window.onload=function(){
+	var bird=document.getElementById("bird");
+	document.onkeydown=function(e){
+		var eve=window.event||e;
+		var startT=parseInt(bird.style.top);
+		var startL=parseInt(bird.style.left);
+		if(eve.keyCode==37){
+			bird.className="";
+			bird.style.left=startL-20+"px";
+			}else if(eve.keyCode==38){
+				bird.style.top=startT-20+"px";
+				}else if(eve.keyCode==39){
+					bird.className="d-right";
+					bird.style.left=startL+20+"px";
+					}else if(eve.keyCode==40){
+						bird.style.top=startT+20+"px";
+						}
+		}
+	
+	}
+
+
+</script>
+</html>

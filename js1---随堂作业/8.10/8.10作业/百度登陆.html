@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>百度登录</title>
+<style>
+img{width:357px;height:269px;position:absolute;top:0;left:0;}
+
+</style>
+</head>
+
+<body>
+<img src="login.png" id="img">
+<script>
+window.onload=function(){
+var imgs=document.getElementById("img");
+imgs.onmousedown=function(e){
+	var e=window.event||e;
+	//alert(1);
+	var left=e.offsetX;
+	var top=e.offsetY;
+	document.onmousemove=function(e){
+		var e=window.event||e;
+		//alert(1);
+		
+		var cw=document.documentElement.clientWidth;
+		var ch=document.documentElement.clientHeight;
+		imgs.style.left=e.clientX-left+"px";
+		imgs.style.top=e.clientY-top+"px";
+		var imgw=imgs.width;
+		var imgH=imgs.height;
+		var kuan=e.clientX-left;
+		var gao=e.clientY-top;
+		if(kuan>cw-imgw){
+			kuan=cw-imgw;
+		}else if(kuan<0){
+			kuan=0;
+			}
+		if(gao>ch-imgH){
+			gao=ch-imgH;
+		}else if(gao<0){
+			gao=0;
+			}
+			imgs.style.left=kuan+'px';
+			imgs.style.top=gao+'px';
+			window.event?e.returnValue=false:e.preventDefault();
+		}
+		return false;
+	}
+	imgs.onmouseup=function(e){
+		var e=window.event||e;
+		document.onmousemove='';
+		}
+
+}
+</script>
+</body>
+</html>
+

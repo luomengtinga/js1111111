@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+
+<!--#box{width:200px;height:100px;border:1px solid red;color:green;}-->
+<!--span{display:inline-block;padding:2px;width:20px;height:10px;background:yellow;}-->
+
+table{width:100%;border-collapse:collapse;}
+tr{border-collapse:collapse;}
+td{border:1px solid green;padding:10px;}
+</style>
+
+
+
+
+
+
+</head>
+
+<body>
+<!--<div id="box"></div>-->
+<!--<input type="text" value="10" id="num1">+
+<input type="text" value="15" id="num2">=
+<input type="button" onclick="sum()" value="计算">
+
+<script src="day4.js"></script>
+-->
+<!--<input type="text" value="" id="year">
+<input type="button" value="判断" onclick="year()">
+<div id="box"></div>
+<script>
+    function year(){
+		var year=document.getElementById("year");
+		var box=document.getElementById("box");
+		//console.log(year);
+		var y=year.value;
+		
+		if((y%4==0&&y%100!=0)||y%400==0){
+			box.innerHTML="是闰年";
+			}else {
+				box.innerHTML="部是闰年";
+				}
+		
+		}
+
+</script>
+-->
+ <script>
+/* 	function jiujiu(){
+		var OBox=document.getElementById("box");
+		for(var i=1;i<=9;i++){
+			for(var j=1;j<=i;j++){
+				OBox.innerHTML+="<span>"+i+"&times;"+j+"="+i*j+"</span>";				
+				}
+			OBox.innerHTML+="<br>";
+			}
+		
+		}
+ */
+ 
+/* for(i=100;i<=999;i++){
+	 var gw=i%10;
+	 var sw=(i%100-gw)/10;
+	 var bw=(i-gw-sw*10)/100;
+	 if(gw*gw*gw+sw*sw*sw+bw*bw*bw==i){
+		 document.write(i+" ");
+		 }
+	 }*/
+/*   function sum(m){
+	   var sum=0;
+	   for (var i=1;i<=m;i++){
+		   sum+=i;
+		   }
+          return sum;   
+	   }
+	    alert(sum(24));*/
+		
+	   
+   function table(){
+	   var row=5;
+	   var col=6;
+	   var str="<table>";
+	   for(var i=1;i<=row;i++){
+		   str+="<tr>";
+		   for(var j=1;j<=col;j++){
+			   str+="<td>啦啦</td>"
+			   }
+			   str+="</tr>";
+		   }
+		   str+="</table>";
+		   return str;
+	   }
+	   table();
+	   document.write(table());
+ </script>
+
+
+
+
+
+
+</body>
+</html>

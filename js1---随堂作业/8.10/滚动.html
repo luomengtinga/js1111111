@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+#box{width:800px;height:200px;border:1px solid red;margin:200px auto;position:relative;overflow:hidden;}
+#box ul{width:800px;height:200px;list-style:none;position:absolute;left:0;top:0;}
+#box ul li{width:200px;height:200px;float:left;}
+#box ul li img{width:200px;height:200px;}
+</style>
+</head>
+
+<body>
+<div id="box">
+<ul>
+<li><img src="img/1.jpg"></li>
+<li><img src="img/2.jpg"></li>
+<li><img src="img/3.jpg"></li>
+<li><img src="img/4.jpg"></li>
+</ul>
+</div>
+<script>
+window.onload=function(){
+	var box=document.getElementById("box");
+	var oUl=document.getElementsByTagName('ul')[0];
+	var oLi=oUl.getElementsByTagName('li');
+	oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+	oUl.style.width=(oLi[0].offsetWidth*oLi.length)+'px';
+	setInterval(function(){
+		/*if(oUl.offsetLeft<-oUl.offsetWidth/2){
+			oUl.style.left=0;*/
+			if(oUl.offsetLeft>0){
+			 oUl.style.left=-oUl.offsetWidth/2+'px';
+			}
+		oUl.style.left=oUl.offsetLeft+2+'px';
+		},30)
+	
+	
+	}
+
+
+
+</script>
+</body>
+</html>

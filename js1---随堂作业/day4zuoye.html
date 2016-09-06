@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box{width:200px;height:100px;border:1px solid yellow;}
+table{border-collapse:collapse;width:100%;}
+td{border:1px solid green;width:10px;padding:5px 5px;}
+</style>
+</head>
+
+<body>
+<!--<input type="text" value="12" id="num1">+
+<input type="text" value="10" id="num2">=
+<input type="button" value="计算" onclick="sum()">-->
+
+<!--<input type="text" value="" id="year">
+<input type="button" value="判断" onclick="year()">
+<div id="box"></div>-->
+<script>
+//-1求1-1/2+1/3-1/4....1/100的和------------------
+
+/*function sum(){
+	var sum=0;
+    for(var i=1;i<=100;i++){
+	if(i%2==0){
+		sum-=1/i;
+		}else{
+			 sum+=1/i;
+			}
+	}
+     return sum;
+    }sum();
+	document.write(sum());
+
+*/
+//-2九九乘法表--------------
+   function i(){
+	   var str=""
+	   for(var i=1;i<=9;i++){
+		   for(var j=1;j<=i;j++){
+			   str+=i+"&times;"+j+"="+i*j+"&nbsp;";
+			   }
+		     str+="<br>"
+		   }
+	   return str;
+	   } 
+	   document.write(i());
+
+//--3水仙花---
+/*   function i(){
+   for(i=100;i<=999;i++){
+   	var gw=i%10;
+    var sw=(i%100-gw)/10;
+    var bw=(i-gw-sw*10)/100;
+		if(gw*gw*gw+sw*sw*sw+bw*bw*bw==i){
+			    document.write(i+" ");
+			   }
+		   }
+	     return i;
+	   }
+	     i();
+	     document.write(i());*/
+//----4求1+2+3+...+100的和
+/*    function sum(){
+		var i=1;
+		var sum=0;
+		while(i<=100){
+			sum+=i;
+			i++;
+			}
+		return sum;
+		}sum();
+		document.write(sum());*/
+//5加法计算-----
+/*    function sum(){
+		var oNum1=document.getElementById("num1");
+		var oNum2=document.getElementById("num2");
+		var num1=Number(oNum1.value);
+		var num2=Number(oNum2.value);
+		alert(num1+num2);
+		}	*/	
+   
+//6,闰年----
+/*    function year(){
+		var year=document.getElementById("year");
+		var box=document.getElementById("box");
+		//console.log(year);
+		var y=year.value;
+		
+		if((y%4==0&&y%100!=0)||y%400==0){
+			box.innerHTML="是闰年";
+			}else {
+				box.innerHTML="不是闰年";
+				}
+		
+		}*/
+		
+//7,-10的阶乘---
+
+/*   function j(){
+	   for(var i=1,j=1;i<=10;i++){
+		   j*=i
+		   
+		   }
+	   return j;
+	   }
+	   j();
+	   document.write(j());*/
+	   
+//8.----排队----
+/*     function x(){
+     for(var x=100;x<=200;x++){
+			 if(x%3==1&&x%4==2&&x%5==3){
+				 document.write(x+" ");
+				 }
+	         }return x;
+			 }x();*/
+			 
+//9打印100–200之间所有能被3或者7整除------
+/*     function x(){
+     for(var x=100;x<=200;x++){
+			 if(x%3==0||x%7==0){
+				 document.write(x+" ");
+				 }
+	          } 
+			 }	x();*/		
+			 
+//10--自动生成表格-	
+/*
+     function table(){
+		 var row=6;
+		 var col=8;
+		 var str="<table>";
+		 for(i=1;i<=row;i++){
+			 str+="<tr>"
+			 
+		for(j=1;j<=col;j++){
+			str+="<td>表格</td>"
+			
+			}
+			str+="</str>"
+		 }
+			str+="</table>";
+		    return str;
+		 
+		 }
+		 table();
+		 document.write(table());*/		  
+</script>
+</body>
+</html>

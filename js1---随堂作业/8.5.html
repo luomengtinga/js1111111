@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/1.css">
+
+<style>
+.box{
+	width:300px;
+	height:60px;
+	border:8px solid #C96;
+	margin:30px;
+	}
+span{display:inline-block;padding:5px 15px;background-color:#ddd;margin:0 3px;border:1px solid #ddd;border-bottom:none;}
+	.content{padding:15px;border:1px solid #ddd;font-size:24px;background-color:#efefef;display:none;}
+	#tab .active{background:red;}
+</style>
+</head>
+
+<body>
+<input type="button" id="btn1" value="红色">
+<input type="button" id="btn2" value="绿色">
+
+
+<div id="box">
+	<ul class="kkk">
+    <li></li>
+    <li></li>
+    <li></li>
+    </ul>
+
+
+</div>
+
+<div id="but"></div>
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="one">1</div>
+
+	<div id="tab"><span class="active">辣条</span><span>豆腐</span><span>方便面</span><span>桂林米粉</span></div>
+	<div class="content" style="display:block">我喜欢吃辣条</div>
+	<div class="content">吃完豆腐池辣条</div>
+	<div class="content">喜欢去超市捏方便面</div>
+	<div class="content">桂林米粉哪里最正宗</div>
+<script>
+window.onload=function(){
+	function getHeight(){
+		var rHeight;
+		if(window.innerHeight){
+			rHeight=window.innerHeight;
+			}else{
+				if(document.compatMode=="CSS1Compat"){
+					rHeight=document.documentElement.clientHeight;
+					}else{
+					
+					  rHeight=document.body.clientHeight;
+					}
+				}
+		   return rHeight;
+		
+		
+		}
+            alert(getHeight());	
+	
+	
+	
+	
+	}
+
+	var but=document.getElementById("but");
+		var box=document.getElementsByClassName("box");
+		
+		for(var i=0;i<box.length;i++){
+			
+			box[i].onclick=function(){
+				for(var j=0;j<box.length;j++){
+					box[j].style.backgroundColor="";
+					
+				}
+				this.style.backgroundColor="red";
+			
+		}
+		}
+	var spans=document.getElementsByTagName("span");
+	var cons=document.getElementsByClassName("content");
+	for(var i=0;i<spans.length;i++){
+	  spans[i].index=i;
+		spans[i].onclick=function(){
+			for(var j=0;j<spans.length;j++){
+				spans[j].className="";
+				cons[j].style.display="none";
+				}
+				this.className="active";
+				cons[this.index].style.display="block";
+			}
+		}
+	
+function getClassName(classname){
+    	var arr=[];
+	    if(document.getElementsByClassName==undefined){
+			var lala=document.getElementsByTagName("*");
+			for(var i=0;i<lala.length;i++){
+				if(lala[i].className==classname){
+					arr.push(lala[i]);
+					}
+				}
+			return arr;
+	
+	}else{
+		return document.getElementsByClassName(classname);
+	   }
+	 }
+		alert(getClassName("content").length);
+		
+var btn1=document.getElementById("btn1");
+console.log(btn1);
+var btn2=document.getElementById("btn2");
+
+btn1.setAttribute("data-background","css/1.css");
+btn2.setAttribute("data-background","css/2.css");
+window.onload=function(){
+var _link=document.getElementsByTagName("link")[0];
+    btn1.onclick=function(){
+	_link.href=this.getAttribute("data-background");
+	}   
+	btn2.onclick=function(){
+	_link.href=this.getAttribute("data-background");
+	}
+}
+
+var box=document.getElementById("box");
+var kkk=document.getElementById("kkk");
+//console.log(box.ownerDocument);
+console.log(box.parentNode);
+
+
+
+</script>
+</body>
+</html>

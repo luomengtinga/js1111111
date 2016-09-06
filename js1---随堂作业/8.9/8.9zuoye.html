@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+ul{margin:0;list-style:none;padding:10px;}
+#datalist{display:none;width:200px;border:1px solid #9CF;}
+#datalist li{padding-left:10px;border-bottom:1px dashed #CCC;line-height:1.5;}
+#datalist li:last-child{border:none;}
+</style>
+</head>
+
+<body>
+<input type="text" id="data">
+<ul id="datalist">
+<li>陈奕迅郑州演唱会</li>
+<li>王牌对王牌新期预告</li>
+<li>七夕的礼物</li>
+<li>2016高考状元</li>
+<li>最新报道</li>
+</ul>
+<script>
+window.onload=function(){
+var data=document.getElementsByTagName('input')[0];
+var datalist=document.getElementsByTagName('ul')[0];
+ data.onclick=function(e){
+	 //alert(1);
+	 var e=e||window.event;
+	 window.event?e.cancelBubble=true:e.stopPropagation();
+	datalist.style.display="block";
+	}
+    /*data.onblur=function(){
+	datalist.style.display="none";
+	}*/
+   datalist.onmouseover=function(e){
+	   var e=window.event||e;
+	   var tar=e.target||e.srcElement;
+	   alert(tar);
+	   if(tar.tagName.toLowerCase()=="li"){
+		tar.style.background="#6FC";
+		}
+		
+      datalist.onmouseout=function(e){
+	   var e=window.event||e;
+	   var tar=e.target||e.srcElement;
+	   if(tar.tagName.toLowerCase()=="li"){
+		tar.style.background="";
+		}
+
+	  }
+	  datalist.onclick=function(e){
+		  var e=window.event||e;
+		  //alert(1);
+	      var tar=e.target||e.srcElement;
+	      if(tar.tagName.toLowerCase()=="li"){
+			  data.value=tar.innerHTML;
+			  }
+		   datalist.style.display="none";
+		  }
+		  document.body.onclick=function(e){
+			   datalist.style.display="none";
+			  }
+	  }
+
+}
+</script>
+</body>
+</html>

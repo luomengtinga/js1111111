@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<input type="txt" value="" id="txt">
+<input type="button" value="执行" id="btn">
+<div id="box"></div>
+
+
+<script>
+//今天封装的日期函数，自己封装一遍
+/*function fnTime(){
+	var myTime=new Date();
+	var year=myTime.getFullYear();
+	var month=myTime.getMonth();
+	var date=myTime.getDate();
+	var hours=myTime.getHours();
+	var minutes=myTime.getMinutes();
+	var seconds=myTime.getSeconds();
+	var day=myTime.getDay();
+	var week="";
+	switch(day){
+		case 0:week="星期日";break;
+		case 1:week="星期一";break;
+		case 2:week="星期二";break;
+		case 3:week="星期三";break;
+		case 4:week="星期四";break;
+		case 5:week="星期五";break;
+		case 6:week="星期六";break;
+		default:break;
+		}
+		var str="";
+	    str=year+"年"+month+"月"+date+"日"+lw(hours)+":"+lw(minutes)+":"+lw(seconds)+""+week;
+	    document.body.innerHTML=str;
+	 }fnTime()
+       function lw(n){
+		  return n<=9?"0"+n:""+n;
+		   }
+		   setInterval(function(){
+			   fnTime()
+			   },1000);
+			setInterval(fnTime,1000); */ 
+			
+			
+//2判断是否为闰年
+
+/* function isYear(year){
+	 if((year%4==0&&year%100!=0)||year%400==0){
+	   return true;
+	 
+	 }else{
+		 
+		 return false;
+		 }
+	 
+	 }document.write(isYear(2016));
+	    */
+//获得N天以后的日期
+
+/*	function hd(n){
+		var myTime=new Date();
+		var newTime=myTime.getTime();
+		newTime+=n*86400*1000;
+		return new Date(newTime);
+		}
+		document.write(hd(3));*/
+		
+		
+		
+//写一个字符串去重的函数
+
+	
+/* function qc(){
+	  var str="121fafabbt哈哈了你了54451";
+      arr=str.split("");
+	  //console.log(arr);//将字符串转换成数组 
+	  for(var i=0;i<arr.length;i++){     //第一个下标 ，最大小标小于长度减一
+		 for(var j=i+1;j<arr.length;j++){   //声明第二个下标的元素
+			 if(arr[i]==arr[j]){    //判断下标i是否跟下标j相同
+			    arr.splice(j,1);
+				j--;
+			 }
+				  }
+		    }document.write(arr);
+	 }qc();*/
+	  
+	/* var myTime=new Date();
+     alert(myTime);*/
+//3----------------------------
+function fnTime(){
+	var myTime=new Date();
+	var year=myTime.getFullYear();
+	var month=myTime.getMonth();
+	var date=myTime.getDate();
+	var hours=myTime.getHours();
+	var minutes=myTime.getMinutes();
+	var seconds=myTime.getSeconds();
+	var day=myTime.getDay();
+	var str="";
+	    str="系统当前时间为："+year+"年"+month+"月"+date+"日"+""+lw(hours)+":"+lw(minutes)+":"+lw(seconds);
+	    document.body.innerHTML=str;
+	 }fnTime()
+       function lw(n){
+		  return n<=9?"0"+n:""+n;
+		   }
+		   setInterval(function(){
+			   fnTime()
+			   },1000);
+			setInterval(fnTime,1000);
+    var start=new Date();
+    
+function begin(){
+	var two=new Date();
+	var cha=Math.floor((two-start)/1000);
+	var hours=Math.floor(cha/3600);
+	var mins=Math.floor(cha%3600/60);
+	var seconds=Math.floor(cha%60);
+	chajv.innerHTML="当前页面已停留:"+hours+"小时"+mins+"分钟"+seconds+"秒";	
+}
+   begin();
+   var cc=null;
+   cc=setInterval(begin,1000);
+
+   btn.onclick=function sun(){
+	var nn=txt.value;
+	var mm=nn.charCodeAt()
+	var str="您输入的字符是："+nn+",它的ASCII码是："+mm;
+	box.innerHTML=str;	
+}
+
+
+</script>
+</body>
+</html>
